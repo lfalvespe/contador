@@ -8,7 +8,7 @@ const Redefine = ({setTitulo, setCount}) => {
                 setTitulo('Contador Numérico')
             }}>
                 {'>> REDEFINIR <<'}
-                <br /><span className='action-icon' style={{ fontSize: '2.5em', lineHeight: '15px' }}>♾️</span>
+                <br /><span className='action-icon' id='redefine-icon' style={{ fontSize: '2.5em'}}>♾️</span>
             </h5>
         </>
     )

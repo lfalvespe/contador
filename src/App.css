@@ -88,11 +88,6 @@
   color: rgb(247, 248, 248);
 }
 
-.edit-title-btn {
-  color: gray;
-  cursor: pointer;
-}
-
 .input-title {
   padding: 5px;
   border-radius: 5px;
@@ -111,8 +106,6 @@
 
 .action-icon {
   text-shadow: 1px 1px 2px #00000044;
-  padding: 2px;
-  margin-left: 5px;
 }
 
 .instructions {
@@ -145,8 +138,6 @@ footer {
   vertical-align: text-top;
 }
 
-
-
 .blink {
   animation: blink 1s steps(1, end) infinite;
 }
@@ -169,5 +160,8 @@ footer {
   }
   .display {
     font-size: .6em;
+  }
+  #redefine-icon {
+    line-height: 40px;
   }
 }
