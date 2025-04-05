@@ -1,127 +1,91 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef} from 'react'
 
+// Custom Hooks
+import useSaveTitle from '../hooks/useSaveTitle'
+import useSaveInitial from '../hooks/useSaveInitial'
+import useUpdateTitle from '../hooks/useUpdateTitle'
+import useUpdateCount from '../hooks/useUpdateCount'
+
+//Components
+
+import Display from '../components/Display'
+import CounterControls from '../components/CounterControls'
+import TitleEditor from '../components/TitleEditor'
+import InitialValueEditor from '../components/InitialValueEditor'
+import Redefine from '../components/Redefine'
+import Instructions from '../components/Instructions'
+import Footer from '../components/Footer'
+
+// CSS
 import './App.css'
 
 const App = () => {
 
   const [count, setCount] = useState(
-    Number(localStorage.getItem('valor')) ?? 0
+    Number(localStorage.getItem('contador')) ?? 0
   )
   const [initial, setInitial] = useState('')
+  const [editInitial, setEditInitial] = useState(false)
+  let countArray = count.toString().split('')
 
+  const [titulo, setTitulo] = useState(
+    localStorage.getItem('titulo') ?? 'Contador Numérico'
+  )
+  const [title, setTitle] = useState('')
+  const [editTitle, setEditTitle] = useState(false)
 
+  // Refs
+  const inputInitialRef = useRef()
+  const inputTitleRef = useRef()
 
-  useEffect(() => {
-    localStorage.setItem('valor', count)
-  }, [count])
+  //Update data
+  const saveTitle = useSaveTitle({ setTitulo, title, setTitle, setEditTitle })
+  const saveInitial = useSaveInitial({ initial, setInitial, setEditInitial, setCount })
 
-
-  const inputInitial = useRef()
-
-  let strCount = count.toString()
-
-  let countArray = strCount.split('')
-
-  console.log(countArray)
+  //Persistence 
+  useUpdateCount(count)
+  useUpdateTitle(titulo)
 
   return (
     <>
-      <h2>Contador Numérico</h2>
 
-      <div className="display">
+      <h2 className='title'>{titulo}</h2>
 
-        {countArray.length === 5 &&
-          <span className="digit">
-            {
-              countArray.length >= 5
-                ? countArray[0]
-                : '0'
-            }
-          </span>
-        }
+      <Display countArray={countArray} setCount={setCount}/>
 
-        <span className="digit">
-          {
-            countArray.length >= 4
-              ? countArray[countArray.length - 4]
-              : '0'
-          }
-        </span>
+      <CounterControls countArray={countArray} setCount={setCount} />
 
-        <span className="digit">
-          {
-            countArray.length >= 3
-              ? countArray[countArray.length - 3]
-              : '0'
-          }
-        </span>
-        <span className="digit">
-          {
-            countArray.length >= 2
-              ? (countArray[countArray.length - 2])
-              : ('0')
-          }
-        </span>
-        <span className="digit">
-          {countArray[countArray.length - 1]}
-        </span>
+      <div className="options">
+
+        <hr />
+
+        <h3 id='options-title'>
+          EDITAR
+        </h3>
+
+        <TitleEditor
+          title={title}
+          setTitle={setTitle}
+          inputTitleRef={inputTitleRef}
+          editTitle={editTitle}
+          setEditTitle={setEditTitle}
+          saveTitle={saveTitle}
+        />
+        <InitialValueEditor
+          initial={initial}
+          setInitial={setInitial}
+          inputInitialRef={inputInitialRef}
+          saveInitial={saveInitial}
+          editInitial={editInitial}
+          setEditInitial={setEditInitial}
+        />
+        <Redefine setTitulo={setTitulo} setCount={setCount} />
+
+        <hr />
       </div>
 
-      {countArray.length > 5 && <p onClick={() => setCount(0)}>Over 6 digits! <br /><br />Click to Reset</p>}
-
-
-      <div className="card">
-
-        <button className='minus' onClick={() => setCount(c => c - 1)}> -
-        </button>
-        <button className='reset' onClick={() => setCount(0)}> Reset
-        </button>
-        <button className='plus' onClick={() => {
-          setCount(c => c + 1)
-          countArray.length >= 6 && setCount(0)
-        }}> +
-        </button>
-
-      </div>
-
-      <hr />
-
-      <h3>
-        Opções
-      </h3>
-
-      <input
-        type="number"
-        value={initial}
-        ref={inputInitial}
-        onChange={(e) => setInitial(e.target.value)}
-        placeholder='Definir valor inicial'
-        required
-      />
-
-      <p />
-      <button className='define'
-        onClick={() => {
-          inputInitial.current.value != '' &&
-            setCount(Number(initial))
-          setInitial('')
-          inputInitial.current.focus()
-        }}
-
-        style={{ marginLeft: '12px' }}
-
-      > Define
-      </button>
-
-      <hr />
-
-      <p className="instructions">
-        * Contagem máxima 99999 <br />
-        ** Após atingir o limte máximo o contador é reiniciado <br />
-        *** Registro salvo no navegador.
-      </p>
-
-
+      <Instructions />     
+      <Footer />
 
     </>
   )
