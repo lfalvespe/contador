@@ -12,7 +12,7 @@
   <img src='/public/screenshot.png' width=600px>
 </div>
 
-# <div align="center">Conceitos Utilizados:</div>
+# <div align="center">Conteúdo:</div>
 <table align="center">
   <tr>
     <td>
