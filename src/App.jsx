@@ -7,7 +7,7 @@ import useUpdateTitle from '../hooks/useUpdateTitle'
 import useUpdateCount from '../hooks/useUpdateCount'
 
 //Components
-
+import Navbar from '../components/Navbar'
 import Display from '../components/Display'
 import CounterControls from '../components/CounterControls'
 import TitleEditor from '../components/TitleEditor'
@@ -48,8 +48,11 @@ const App = () => {
 
   return (
     <>
+      <Navbar />
+      <header>
 
-      <h2 className='title'>{titulo}</h2>
+        <h2 className='title'>{titulo}</h2>
+      </header>
 
       <Display countArray={countArray} setCount={setCount}/>
 
