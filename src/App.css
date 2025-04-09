@@ -7,10 +7,9 @@
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   column-gap: 5px;
-  font-size: .7em;
-  font-family: 'Courier New', Courier, monospace;
+  font-size: .8em;
 }
 
 
