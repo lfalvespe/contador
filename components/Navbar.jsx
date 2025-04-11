@@ -5,25 +5,25 @@ const Navbar = () => {
         <nav>
              <a
                 href=""
-            > <span class="link-icon">🎰</span>Contador Numérico
+            > <span class="link-icon">🎰 </span>Contador Numérico
             </a>
 
             <a
                 href="https://consultaporcep.vercel.app/"
                 target="_blank"
-            > <span class="link-icon">📬</span>Busca Cep
+            > <span class="link-icon">📬 </span>Busca Cep
             </a>
 
             <a
                 href="https://climagora.vercel.app/"
                 target="_blank"
-            > <span class="link-icon">⛅</span>Clima Agora
+            > <span class="link-icon">⛅ </span>Clima Agora
             </a>
     
             <a
                 href="https://numerosaleatorios-react.vercel.app/"
                 target="_blank"
-            > <span class="link-icon">🎲</span>Números aleatórios
+            > <span class="link-icon">🎲 </span>Números aleatórios
             </a>
         </nav>
     )
