@@ -51,7 +51,7 @@ const App = () => {
       <Navbar />
       <header>
 
-        <h2 className='title'>{titulo}</h2>
+        <h2 className='page-title'>{titulo}</h2>
       </header>
 
       <Display countArray={countArray} setCount={setCount}/>

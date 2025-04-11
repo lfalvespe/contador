@@ -4,16 +4,24 @@
   text-align: center;
 }
 
-nav {
+nav { 
+  width: 500px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   column-gap: 5px;
   font-size: .8em;
 }
 
+nav a {
+  margin-top: 5px;
+  padding: 2px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
 
-.title {
+.page-title {
+  margin-top: 50px;
   margin-bottom: 50px;
   text-transform: uppercase;
   text-shadow: 1px 1px 2px #00000093;
@@ -81,6 +89,12 @@ nav {
   margin-bottom: 17px;
 }
 
+.edit-title-container, .edit-initial-container {
+  display: flex;
+  justify-content: center;
+  column-gap: 5px;
+}
+
 #edit-title-btn, #edit-initial-btn, #redefine-btn {
   color: rgba(173, 210, 252, 0.781);
   font-size: .8em;
@@ -97,18 +111,7 @@ nav {
   color: rgb(247, 248, 248);
 }
 
-.input-title {
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.input-initial {
-  width: 150px;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-#save-initial {
+.input-title, .input-initial {
   padding: 5px;
   border-radius: 5px;
 }
@@ -123,14 +126,25 @@ nav {
 }
 
 footer {
-  width: 50%;
   margin: auto;
-  margin-top: 70px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  width: 400px;
   padding: .5em;
   background-color: #1414143b;
   border: .1em solid #ffffff17;
   border-radius: 10px;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+.author {
+  color: rgb(250, 241, 189);
+  text-shadow: 1px 1px 2px #000;
+  font-weight: light;
+}
+
+footer a {
+  font-weight: normal;
 }
 
 #logo-mail {
@@ -139,8 +153,7 @@ footer {
 
 #logo-author {
   vertical-align: middle;
-  filter: drop-shadow(1px 1px 2px rgba(253, 246, 148, 0.274)
-  );
+  filter: drop-shadow(1px 1px 2px rgba(253, 246, 148, 0.274));
 }
 
 #logo-github {
@@ -148,7 +161,7 @@ footer {
 }
 
 .blink {
-  animation: blink 1s steps(1, end) infinite;
+  animation: blinker 1.4s linear infinite;
 }
 
 @keyframes blink {
@@ -164,6 +177,12 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+  nav {
+    width: 100%;
+  }
+  nav a {
+    font-size: .8em;
+  }
   footer, .options {
     width: 95%;
   }
