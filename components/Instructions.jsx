@@ -4,9 +4,9 @@ const Instructions = () => {
     return (
         <p className="instructions">
             <div className='list'>
-                <div className='line'>▫️ Contagem máxima 99999</div>
-                <div className='line'>▫️Após atingir o limte máximo o contador é reiniciado</div>
-                <div className='line'>▫️ Registro salvo no navegador.</div>
+                <div className='line'><span>▫️</span> <span>Contagem máxima 99999</span></div>
+                <div className='line'><span>▫️</span><span>Após atingir o limte máximo o contador é reiniciado</span></div>
+                <div className='line'><span>▫️</span><span> Registro salvo no navegador.</span></div>
             </div>
         </p>
     )

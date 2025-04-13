@@ -148,6 +148,7 @@ nav a {
 
 .line {
   /* background-color: yellowgreen; */
+  display: flex;
   line-height: 25px;
   text-align: left;
 }
