@@ -5,7 +5,7 @@
 }
 
 nav { 
-  width: 500px;
+  width: 700px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -15,10 +15,13 @@ nav {
 }
 
 nav a {
-  margin-top: 5px;
   padding: 2px 15px;
   border-radius: 5px;
-  text-transform: uppercase;
+}
+
+.nav-icon {
+  width: 15px;
+  vertical-align:text-top;
 }
 
 .page-title {
@@ -181,9 +184,7 @@ footer a {
   nav {
     width: 100%;
   }
-  nav a {
-    font-size: .8em;
-  }
+
   footer, .options {
     width: 95%;
   }
