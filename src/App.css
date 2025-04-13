@@ -17,6 +17,7 @@ nav {
 nav a {
   padding: 2px;
   border-radius: 5px;
+  margin-bottom: 4px;
 }
 
 .nav-icon {
@@ -184,7 +185,6 @@ footer a {
   nav {
     width: 100%;
   }
-
   footer, .options {
     width: 95%;
   }
