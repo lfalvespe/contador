@@ -4,9 +4,9 @@
   text-align: center;
 }
 
-nav { 
+nav {
   width: 700px;
-  margin: 0 ;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -22,7 +22,7 @@ nav a {
 
 .nav-icon {
   width: 15px;
-  vertical-align:text-top;
+  vertical-align: text-top;
 }
 
 .page-title {
@@ -37,7 +37,7 @@ nav a {
   display: flex;
   justify-content: center;
   column-gap: 5px;
-  font-weight:600;
+  font-weight: 600;
 }
 
 .digit {
@@ -94,13 +94,16 @@ nav a {
   margin-bottom: 17px;
 }
 
-.edit-title-container, .edit-initial-container {
+.edit-title-container,
+.edit-initial-container {
   display: flex;
   justify-content: center;
   column-gap: 5px;
 }
 
-#edit-title-btn, #edit-initial-btn, #redefine-btn {
+#edit-title-btn,
+#edit-initial-btn,
+#redefine-btn {
   color: rgba(173, 210, 252, 0.781);
   font-size: .8em;
   margin: 15px auto;
@@ -112,11 +115,14 @@ nav a {
   text-shadow: 1px 1px 2px #000000a6;
 }
 
-#edit-title-btn:hover, #edit-initial-btn:hover, #redefine-btn:hover {
+#edit-title-btn:hover,
+#edit-initial-btn:hover,
+#redefine-btn:hover {
   color: rgb(247, 248, 248);
 }
 
-.input-title, .input-initial {
+.input-title,
+.input-initial {
   padding: 5px;
   border-radius: 5px;
 }
@@ -126,8 +132,26 @@ nav a {
 }
 
 .instructions {
+  width: 50%;
+  margin: auto;
   margin-top: 70px;
   color: #888;
+  /* background-color: rgb(102, 47, 255); */
+}
+
+.instructions ul {
+  width: fit-content;
+  /* background-color: rgb(20, 20, 20); */
+  padding: 0;
+  margin: 0 auto;
+  /* list-style: none; */
+  list-style-position: inside;
+}
+
+.instructions li {
+  /* background-color: yellowgreen; */
+  margin: 0 auto;
+  text-align: justify;
 }
 
 footer {
@@ -151,7 +175,7 @@ footer {
   filter: drop-shadow(1px 1px 2px rgba(253, 246, 148, 0.274));
 }
 
-#author-text-container{
+#author-text-container {
   flex: 1;
   display: flex;
   justify-content: flex-start;
@@ -212,9 +236,11 @@ footer #links img {
   0% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -224,12 +250,16 @@ footer #links img {
   nav {
     width: 100%;
   }
-  .options {
+
+  .options,
+  .instructions {
     width: 95%;
   }
+
   .display {
     font-size: .6em;
   }
+
   #redefine-icon {
     line-height: 40px;
   }
